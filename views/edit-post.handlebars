@@ -1,0 +1,27 @@
+<a href="/dashboard" class="back-btn inline-block mb-4 text-blue-500">&larr; Back to dashboard</a>
+
+<article class="page-style bg-gray-100 p-8">
+    <section class="edit-form-page bg-white p-8 rounded shadow-md">
+        <div class="form-title mb-6">
+            <h2 class="text-2xl font-bold">Edit Post</h2>
+        </div>
+        <div class="form-section">
+            <form class="edit-post-form">
+                <div class="mb-4">
+                    <label for="post-title" class="block text-sm font-medium text-gray-600">Title</label>
+                    <input type="text" name="post-title" id="post-title" value="{{post.title}}" class="entry-field w-full mt-1 p-2 border rounded" />
+                </div>
+                <div class="mb-4">
+                    <label for="post-content" class="block text-sm font-medium text-gray-600">Content</label>
+                    <textarea class="entry-field w-full mt-1 p-2 border rounded" id="post-content" name="post-content">{{post.content}}</textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Update post</button>
+                <button type="button" class="delete-post-btn bg-red-500 text-white py-2 px-4 rounded ml-2">Delete post</button>
+            </form>
+        </div>
+    </section>
+</article>
+
+{{#if loggedIn}}
+<script src="/js/post.js"></script>
+{{/if}}

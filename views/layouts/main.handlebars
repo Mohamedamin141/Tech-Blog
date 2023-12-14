@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto">
+        <header class="bg-blue-500 p-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <h1 class="text-2xl text-white mr-4">
+                    <a href="/">Home</a>
+                </h1>
+                <h1 class="text-3xl ml-10 font-bold text-black">
+                    <a href="/">Tech Blog</a>
+                </h1>
+            </div>
+            <div class="flex items-center">
+                <nav class="flex items-center ml-4">
+
+                    
+                    {{#if loggedIn}}
+                    <a href="/dashboard" class="text-white">Dashboard</a>
+                    <button id="logout" class="ml-4 bg-white text-blue-500 rounded px-4 py-2">Logout</button>
+                    {{else}}
+                    <a href="/login" class="text-white mr-4">Login</a>
+                    <a href="/signup" class="text-white">Signup</a>
+                    {{/if}}
+                </nav>
+            </div>
+        </header>
+        <main class="mt-8">
+            {{{ body }}}
+        </main>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
+
